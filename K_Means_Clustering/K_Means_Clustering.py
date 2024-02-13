@@ -1,7 +1,7 @@
 import numpy as np
 
 class K_Means_Clustering():
-    def __init__(self, n_clusters=5, max_iter=300, tol=1e-4):
+    def __init__(self, n_clusters, max_iter=300, tol=1e-4):
         self.n_clusters = n_clusters
         self.max_iter = max_iter
         self.tol = tol
@@ -35,3 +35,10 @@ class K_Means_Clustering():
             new_centroids[i] = np.mean(X[clusters == i], axis=0)
 
         return new_centroids
+    
+    def compute_inertia(self, X):
+        distances = np.sqrt(((X - self.centroids[:, np.newaxis])**2).sum(axis=2))
+        min_distances = np.min(distances, axis=0)
+        inertia = np.sum(min_distances ** 2)
+        
+        return inertia
