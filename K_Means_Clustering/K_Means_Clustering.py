@@ -35,10 +35,3 @@ class K_Means_Clustering():
             new_centroids[i] = np.mean(X[clusters == i], axis=0)
 
         return new_centroids
-    
-    def compute_inertia(self, X):
-        distances = np.sqrt(((X - self.centroids[:, np.newaxis])**2).sum(axis=2))
-        min_distances = np.min(distances, axis=0)
-        inertia = np.sum(min_distances ** 2)
-        
-        return inertia
