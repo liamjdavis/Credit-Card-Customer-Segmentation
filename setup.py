@@ -5,5 +5,5 @@ dist = setup(
     author="Liam Davis",
     license="MIT",
     url="https://github.com/liamjdavis/Credit-Card-Customer-Segmentation.git",
-    packages="credit_card_customer_segmentation",
+    packages="K-Means-Clustering",
 )
